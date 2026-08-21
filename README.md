@@ -5,3 +5,4 @@ Asistente Virtual orientada al acompañamiento y soporte en la salud y bienestar
 #2. Mapa de procesos
 <img width="1241" height="1755" alt="Tabla VitaTech_page-0001" src="https://github.com/user-attachments/assets/b39fc3d8-e0a6-4483-9a6b-fbf0400aa75d" />
 
+jhasadiaoncdaoncoancancmapc
