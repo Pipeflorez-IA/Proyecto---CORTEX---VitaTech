@@ -1,3 +1,4 @@
+<img width="1587" height="2245" alt="VITA-TECH" src="https://github.com/user-attachments/assets/187ae8b0-5525-4224-8f1e-633f6a6480e1" />
 # Proyecto---CORTEX---VitaTech
 Asistente Virtual orientada al acompañamiento y soporte en la salud y bienestar de los usuarios.
 #1. Perfil del agente
