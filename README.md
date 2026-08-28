@@ -1,4 +1,4 @@
-<img width="1587" height="2245" alt="VITA-TECH" src="https://github.com/user-attachments/assets/187ae8b0-5525-4224-8f1e-633f6a6480e1" />
+
 # Proyecto---CORTEX---VitaTech
 Asistente Virtual orientada al acompañamiento y soporte en la salud y bienestar de los usuarios.
 #1. Perfil del agente
@@ -14,3 +14,4 @@ Justificación: (Percepción y atención) La IA debe prestar atención a lo que 
 (Pensamiento y razonamiento) Necesita analizar lo que la persona cuenta, relacionar diferentes elementos de la conversación y generar respuestas que tengan sentido.
 (Motivación cognición y emoción) La IA está directamente relacionada con estos procesos porque busca comprender estados emocionales, reconocer necesidades y fomentar conductas positivas. 
 <img width="1920" height="1080" alt="INPUTS VITATECH" src="https://github.com/user-attachments/assets/1aa05195-be94-4482-b626-eb53bc949114" />
+<img width="1587" height="2245" alt="VITA-TECH" src="https://github.com/user-attachments/assets/187ae8b0-5525-4224-8f1e-633f6a6480e1" />
