@@ -104,3 +104,28 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 | **Episódica (LTM)** | **Temas recurrentes** | Temas que aparecen repetidamente en las interacciones, siempre que su almacenamiento esté autorizado. | "El usuario ha mencionado dificultades académicas en diferentes conversaciones." |
 | **Episódica (LTM)** | **Estrategias utilizadas** | Registra las estrategias de acompañamiento utilizadas y la respuesta del usuario. | "Se realizó un ejercicio de respiración y el usuario manifestó sentirse más tranquilo." |
 | **Episódica (LTM)** | **Evolución de la conversación** | Cambios relevantes en la información o emociones expresadas durante una interacción. | "El usuario pasó de expresar preocupación a indicar que se siente más tranquilo." |
+# 🏥 Base de Conocimiento — Vita Tech
+
+> **Semana 7:** El Disco Duro — Memoria a Largo Plazo (LTM): Semántica y Episódica[cite: 1].
+> **Enfoque:** Salud, Bienestar y Soporte Clínico Basado en **DSM-5** y **CIE-10**.
+
+Este documento define el esquema de la base de conocimiento para **Vita Tech**, estructurando su Memoria a Largo Plazo (LTM) para garantizar respuestas precisas, éticas y fundamentadas en estándares clínicos e internacionales de salud mental y física[cite: 1].
+
+---
+
+## 📊 Esquema de Estructura de Datos (Memoria a Largo Plazo - LTM)[cite: 1]
+
+| ID Categoria | Categoría de Memoria | Tipo de LTM | Criterio / Fuente Principal | Descripción y Propósito en Vita Tech | Ejemplos de Información Almacenada |
+| :---: | :--- | :---: | :---: | :--- | :--- |
+| **CAT-01** | **Criterios Diagnósticos y Trastornos** | **Semántica**[cite: 1] | **DSM-5** (APA) | Criterios estandarizados para identificar sintomatología de salud mental, niveles de gravedad y diagnósticos diferenciales[cite: 1]. | • Criterios de depresión mayor, ansiedad generalizada, TDAH.<br>• Indicadores de severidad y exclusión. |
+| **CAT-02** | **Clasificación Médica Internacional** | **Semántica**[cite: 1] | **CIE-10** (OMS) | Codificación y taxonomía oficial para enfermedades, afecciones, síntomas y causas externas de salud. | • Códigos de diagnóstico (ej. F41.1, F32.9).<br>• Clasificación de síntomas físicos y mentales. |
+| **CAT-03** | **Guías de Bienestar y Prevención** | **Semántica**[cite: 1] | Protocolos Clínicos y Estilos de Vida | Información preventiva sobre hábitos saludables, higiene del sueño, gestión del estrés y nutrición básica. | • Técnicas de respiración y *mindfulness*.<br>• Recomendaciones de sueño y actividad física.<br>• Redes y líneas de atención en crisis. |
+| **CAT-04** | **Historial y Contexto de Salud del Usuario** | **Episódica**[cite: 1] | Registros de Interacción del Usuario | Almacenamiento continuo de sesiones previas, evolución de síntomas reportados, hábitos y progresos del usuario[cite: 1]. | • Seguimiento de estado de ánimo previo.<br>• Alergias o condiciones reportadas por el usuario.<br>• Registro de metas de bienestar alcanzadas. |
+
+---
+
+## ⚙️ Principios de Arquitectura para Vita Tech
+
+1. **Memoria Semántica (Lógica y Fundamentos):** Almacena el conocimiento científico riguroso (**DSM-5**, **CIE-10** y guías de salud)[cite: 1]. Le permite a **Vita Tech** comprender términos médicos y criterios sin distorsionarlos[cite: 1].
+2. **Memoria Episódica (Experiencia y Contexto):** Permite a **Vita Tech** recordar conversaciones anteriores, dar seguimiento al progreso de bienestar del usuario y mantener la continuidad en la atención personalizada[cite: 1].
+3. **Límites Éticos y Asistenciales:** Vita Tech utiliza estas estructuras para orientación, educación en salud y tamizaje inicial, recordando siempre que **no reemplaza el criterio ni la consulta de un profesional de la salud**.
