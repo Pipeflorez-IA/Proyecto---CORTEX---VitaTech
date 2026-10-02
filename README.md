@@ -86,33 +86,50 @@ La memoria episódica almacena información relacionada con las experiencias e i
 
 ## 4. Funcionamiento de la Memoria
 
-El funcionamiento de la memoria del agente puede representarse mediante el siguiente proceso:
+La memoria del agente permite almacenar y utilizar información relevante para mantener el contexto de las interacciones y generar respuestas coherentes. El sistema diferencia entre el conocimiento general del agente y la información específica de cada usuario.
 
-**Entrada del usuario**
-   
-↓
-   
-**Procesamiento de la información**
-   
-↓
-   
-**Identificación del contexto y contenido emocional**
-   
-↓
-   
-**Clasificación de la información**
-   
-├── **Memoria Semántica:** conocimiento permanente del agente
-   
-└── **Memoria Episódica:** información relevante de la interacción
-   
-↓
-   
-**Generación de respuesta**
-   
-↓
-   
-**Acompañamiento emocional contextualizado**
+### Proceso de funcionamiento
+
+1. **Entrada de información**  
+   El usuario proporciona información mediante texto, emojis, voz o archivos multimedia.
+
+2. **Procesamiento**  
+   El agente analiza el contenido recibido para identificar su significado, contexto, emociones y temas relevantes.
+
+3. **Clasificación de la información**  
+   La información procesada se clasifica según su tipo:
+   - **Memoria Semántica:** conocimientos generales y permanentes del agente.
+   - **Memoria Episódica:** información relacionada con las interacciones y experiencias del usuario.
+
+4. **Almacenamiento**  
+   La información relevante se almacena en el tipo de memoria correspondiente, siempre teniendo en cuenta la privacidad y autorización del usuario.
+
+5. **Recuperación**  
+   Cuando es necesario, el agente consulta la información almacenada para comprender mejor el contexto de la conversación.
+
+6. **Generación de respuesta**  
+   El agente combina el conocimiento general con el contexto disponible para generar una respuesta coherente, empática y adecuada.
+
+### Ejemplo
+
+**Entrada del usuario:**
+
+> "Estoy preocupado porque mañana tengo un examen y siento que no voy a poder."
+
+**Información identificada:**
+
+- **Tema:** Académico
+- **Emoción:** Preocupación
+- **Tipo de información:** Episódica
+- **Contexto:** Examen próximo
+
+El agente utiliza esta información junto con su **Memoria Semántica**, que contiene conocimientos sobre comunicación empática y estrategias generales de bienestar.
+
+Finalmente, genera una respuesta orientada a **escuchar, acompañar y ofrecer una estrategia adecuada** para la situación expresada por el usuario.
+
+### Resultado
+
+La memoria permite que el asistente no se limite a responder únicamente al mensaje actual, sino que pueda utilizar el conocimiento disponible y el contexto relevante para ofrecer respuestas más coherentes y personalizadas.
 
 ---
 
