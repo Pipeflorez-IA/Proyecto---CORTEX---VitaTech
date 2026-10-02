@@ -41,26 +41,6 @@ FIN SI
 * **Filtro de Entrada:** Analiza el conteo de palabras del mensaje entrante en tiempo real.
 * **Procesamiento de Lenguaje Natural (PLN):** Identifica y aísla gramaticalmente los sustantivos clave cuando se activa el filtro.
 * **Reducción de Carga Cognitiva:** Descarta los elementos conectores o secundarios del texto largo para entregar una síntesis limpia al usuario.
-# Esquema de la Base de Conocimiento 
-
-> **Semana 7:** El Disco Duro — Memoria a Largo Plazo (LTM): Semántica y Episódica.
-
-Este documento contiene la estructura y el esquema conceptual para simular las "carpetas" de memoria a largo plazo que utilizará el bot para organizar, almacenar y consultar información fundamental de manera persistente.
-
----
-
-## 🗂️ Estructura del Esquema de Datos (LTM)
-
-| ID Categoria | Categoría de Memoria | Tipo de Memoria (LTM) | Descripción y Propósito | Tipos de Datos / Contenido Ejemplar |
-| :---: | :--- | :---: | :--- | :--- |
-| **CAT-01** | **Memoria Semántica (Conocimiento Base)** | Semántica | Conceptos, reglas, leyes, normas y fórmulas que el bot debe conocer permanentemente para operar de manera precisa. | • Leyes / Normativas<br>• Fórmulas y reglas de negocio<br>• Glosario de términos |
-| **CAT-02** | **Catálogo de Productos y Servicios** | Semántica | Registro completo de la oferta disponible, especificaciones técnicas, precios y disponibilidades. | • Catálogo comercial<br>• Fichas técnicas<br>• Lista de precios y SKU |
-| **CAT-03** | **Preguntas Frecuentes (FAQ)** | Semántica | Repositorio de consultas recurrentes y sus respuestas validadas para garantizar consistencia. | • Guías paso a paso<br>• Respuestas estandarizadas<br>• Resoluciones comunes |
-| **CAT-04** | **Memoria Episódica (Histórico de Interacciones)** | Episódica | Registro cronológico y contextual de interacciones previas con usuarios, eventos relevantes y casos pasados. | • Logs de conversaciones<br>• Historial de incidencias<br>• Preferencias del usuario |
-
----
-
-## 📌 Explicación del Diseño
 
 * **Propósito:** El objetivo principal no es almacenar datos masivos en bruto, sino **diseñar la estructura modular** necesaria para que el agente/bot consulte la información precisa según el contexto de la consulta.
 * **Memoria Semántica:** Garantiza que el bot posea un conocimiento del mundo real y del dominio específico (fórmulas, catálogo, procedimientos) que nunca caduca.
