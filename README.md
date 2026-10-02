@@ -41,7 +41,7 @@ FIN SI
 * **Filtro de Entrada:** Analiza el conteo de palabras del mensaje entrante en tiempo real.
 * **Procesamiento de Lenguaje Natural (PLN):** Identifica y aísla gramaticalmente los sustantivos clave cuando se activa el filtro.
 * **Reducción de Carga Cognitiva:** Descarta los elementos conectores o secundarios del texto largo para entregar una síntesis limpia al usuario.
-# Esquema de la Base de Conocimiento (GitHub)
+# Esquema de la Base de Conocimiento 
 
 > **Semana 7:** El Disco Duro — Memoria a Largo Plazo (LTM): Semántica y Episódica.
 
