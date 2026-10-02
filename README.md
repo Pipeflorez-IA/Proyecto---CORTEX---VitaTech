@@ -47,44 +47,8 @@ FIN SI
 * **Memoria Episódica:** Aporta la capacidad de recordar contextos previos, casos particulares y el histórico del usuario para ofrecer respuestas personalizadas y continuas.
 # Diseño de la Memoria del Agente
 
-## 1. Arquitectura de Memoria
 
-El asistente de inteligencia artificial está diseñado para escuchar, comprender y brindar acompañamiento emocional a las personas. Para lograr respuestas coherentes y contextualizadas, el agente utiliza dos tipos principales de memoria: **memoria semántica** y **memoria episódica**.
-
-La memoria semántica contiene los conocimientos que el agente necesita para funcionar, mientras que la memoria episódica almacena información relevante de las interacciones con el usuario.
-
----
-
-## 2. Memoria Semántica (LTM)
-
-La memoria semántica representa el conocimiento permanente del agente. Contiene información general que no depende de una conversación específica.
-
-| Categoría | Descripción | Ejemplo de entrada |
-|---|---|---|
-| **Bienestar emocional** | Conocimientos generales relacionados con emociones, estrés, ansiedad, autoestima y bienestar. | "La respiración controlada puede ayudar a disminuir temporalmente la sensación de estrés." |
-| **Comunicación empática** | Principios para responder de manera respetuosa, comprensiva y sin juzgar. | "Primero se debe validar lo que la persona expresa antes de ofrecer una orientación." |
-| **Reconocimiento emocional** | Información para identificar posibles expresiones relacionadas con diferentes estados emocionales. | "El emoji 😔 puede asociarse con tristeza dependiendo del contexto." |
-| **Procesamiento multimodal** | Conocimientos sobre el procesamiento de texto, emojis, voz e información multimedia. | "El contenido de un audio puede convertirse en texto para facilitar su análisis." |
-| **Protocolos de seguridad** | Reglas para identificar situaciones que podrían requerir atención profesional o ayuda inmediata. | "Ante señales de riesgo, se debe recomendar buscar ayuda profesional o servicios de emergencia." |
-| **Límites del asistente** | Define las funciones que puede realizar el agente y sus limitaciones. | "El asistente ofrece acompañamiento y orientación, pero no realiza diagnósticos psicológicos." |
-
----
-
-## 3. Memoria Episódica (LTM)
-
-La memoria episódica almacena información relacionada con las experiencias e interacciones específicas del usuario. Su objetivo es conservar el contexto necesario para que el asistente pueda mantener una conversación coherente.
-
-| Categoría | Descripción | Ejemplo de entrada |
-|---|---|---|
-| **Conversación actual** | Información relevante mencionada durante la interacción. | "El usuario menciona sentirse estresado por un examen." |
-| **Contexto personal** | Situaciones que el usuario comparte y que ayudan a comprender el contexto de su problema. | "El usuario está teniendo dificultades para adaptarse a un cambio reciente." |
-| **Estado emocional expresado** | Emociones manifestadas por el usuario durante una interacción. | "El usuario expresa sentirse triste y preocupado." |
-| **Temas recurrentes** | Temas que aparecen repetidamente durante las interacciones, cuando su almacenamiento está permitido. | "El usuario ha mencionado varias veces dificultades relacionadas con sus estudios." |
-| **Estrategias utilizadas** | Registra las estrategias de acompañamiento utilizadas durante una conversación y la respuesta del usuario. | "El usuario realizó un ejercicio de respiración y manifestó sentirse más tranquilo." |
-
----
-
-## 2. Arquitectura de Memoria del Agente
+##  Arquitectura de Memoria del Agente
 
 La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episódica**. La primera contiene los conocimientos y bases de referencia que utiliza el agente, mientras que la segunda conserva información relevante de las interacciones con el usuario, cuando su almacenamiento está autorizado.
 
@@ -104,28 +68,3 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 | **Episódica (LTM)** | **Temas recurrentes** | Temas que aparecen repetidamente en las interacciones, siempre que su almacenamiento esté autorizado. | "El usuario ha mencionado dificultades académicas en diferentes conversaciones." |
 | **Episódica (LTM)** | **Estrategias utilizadas** | Registra las estrategias de acompañamiento utilizadas y la respuesta del usuario. | "Se realizó un ejercicio de respiración y el usuario manifestó sentirse más tranquilo." |
 | **Episódica (LTM)** | **Evolución de la conversación** | Cambios relevantes en la información o emociones expresadas durante una interacción. | "El usuario pasó de expresar preocupación a indicar que se siente más tranquilo." |
-# 🏥 Base de Conocimiento — Vita Tech
-
-> **Semana 7:** El Disco Duro — Memoria a Largo Plazo (LTM): Semántica y Episódica[cite: 1].
-> **Enfoque:** Salud, Bienestar y Soporte Clínico Basado en **DSM-5** y **CIE-10**.
-
-Este documento define el esquema de la base de conocimiento para **Vita Tech**, estructurando su Memoria a Largo Plazo (LTM) para garantizar respuestas precisas, éticas y fundamentadas en estándares clínicos e internacionales de salud mental y física[cite: 1].
-
----
-
-## 📊 Esquema de Estructura de Datos (Memoria a Largo Plazo - LTM)[cite: 1]
-
-| ID Categoria | Categoría de Memoria | Tipo de LTM | Criterio / Fuente Principal | Descripción y Propósito en Vita Tech | Ejemplos de Información Almacenada |
-| :---: | :--- | :---: | :---: | :--- | :--- |
-| **CAT-01** | **Criterios Diagnósticos y Trastornos** | **Semántica**[cite: 1] | **DSM-5** (APA) | Criterios estandarizados para identificar sintomatología de salud mental, niveles de gravedad y diagnósticos diferenciales[cite: 1]. | • Criterios de depresión mayor, ansiedad generalizada, TDAH.<br>• Indicadores de severidad y exclusión. |
-| **CAT-02** | **Clasificación Médica Internacional** | **Semántica**[cite: 1] | **CIE-10** (OMS) | Codificación y taxonomía oficial para enfermedades, afecciones, síntomas y causas externas de salud. | • Códigos de diagnóstico (ej. F41.1, F32.9).<br>• Clasificación de síntomas físicos y mentales. |
-| **CAT-03** | **Guías de Bienestar y Prevención** | **Semántica**[cite: 1] | Protocolos Clínicos y Estilos de Vida | Información preventiva sobre hábitos saludables, higiene del sueño, gestión del estrés y nutrición básica. | • Técnicas de respiración y *mindfulness*.<br>• Recomendaciones de sueño y actividad física.<br>• Redes y líneas de atención en crisis. |
-| **CAT-04** | **Historial y Contexto de Salud del Usuario** | **Episódica**[cite: 1] | Registros de Interacción del Usuario | Almacenamiento continuo de sesiones previas, evolución de síntomas reportados, hábitos y progresos del usuario[cite: 1]. | • Seguimiento de estado de ánimo previo.<br>• Alergias o condiciones reportadas por el usuario.<br>• Registro de metas de bienestar alcanzadas. |
-
----
-
-## ⚙️ Principios de Arquitectura para Vita Tech
-
-1. **Memoria Semántica (Lógica y Fundamentos):** Almacena el conocimiento científico riguroso (**DSM-5**, **CIE-10** y guías de salud)[cite: 1]. Le permite a **Vita Tech** comprender términos médicos y criterios sin distorsionarlos[cite: 1].
-2. **Memoria Episódica (Experiencia y Contexto):** Permite a **Vita Tech** recordar conversaciones anteriores, dar seguimiento al progreso de bienestar del usuario y mantener la continuidad en la atención personalizada[cite: 1].
-3. **Límites Éticos y Asistenciales:** Vita Tech utiliza estas estructuras para orientación, educación en salud y tamizaje inicial, recordando siempre que **no reemplaza el criterio ni la consulta de un profesional de la salud**.
