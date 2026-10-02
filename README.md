@@ -84,3 +84,23 @@ La memoria episódica almacena información relacionada con las experiencias e i
 
 ---
 
+## 2. Arquitectura de Memoria del Agente
+
+La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episódica**. La primera contiene los conocimientos y bases de referencia que utiliza el agente, mientras que la segunda conserva información relevante de las interacciones con el usuario, cuando su almacenamiento está autorizado.
+
+| Tipo de Memoria | Categoría de Datos | Descripción | Ejemplo de Entrada |
+|---|---|---|---|
+| **Semántica (LTM)** | **DSM-5** | Base de referencia para comprender conceptos y criterios relacionados con diferentes condiciones de salud mental. Se utiliza únicamente como fuente de conocimiento y no para realizar diagnósticos. | "El DSM-5 establece criterios específicos para la clasificación de diferentes trastornos." |
+| **Semántica (LTM)** | **CIE-10** | Sistema de clasificación de enfermedades utilizado como referencia para comprender categorías relacionadas con la salud mental. | "La CIE-10 contiene categorías para la clasificación de trastornos mentales y del comportamiento." |
+| **Semántica (LTM)** | **Bienestar emocional** | Conocimientos generales relacionados con emociones, estrés, ansiedad, autoestima y estrategias de bienestar. | "Las técnicas de respiración pueden utilizarse como estrategia de relajación." |
+| **Semántica (LTM)** | **Comunicación empática** | Principios para responder de manera respetuosa, comprensiva y sin juzgar al usuario. | "Validar las emociones expresadas antes de ofrecer una orientación." |
+| **Semántica (LTM)** | **Reconocimiento emocional** | Conocimientos para interpretar expresiones lingüísticas, emojis y otras señales relacionadas con posibles estados emocionales. | "El emoji 😔 puede expresar tristeza dependiendo del contexto." |
+| **Semántica (LTM)** | **Procesamiento multimodal** | Conocimientos necesarios para interpretar texto, emojis, voz y archivos multimedia. | "El contenido de un audio puede convertirse en texto para facilitar su procesamiento." |
+| **Semántica (LTM)** | **Protocolos de seguridad** | Reglas para identificar posibles situaciones de riesgo y orientar al usuario hacia ayuda profesional cuando sea necesario. | "Ante señales de riesgo, recomendar atención profesional o servicios de emergencia." |
+| **Semántica (LTM)** | **Límites del asistente** | Define las funciones y limitaciones del sistema frente a la atención psicológica. | "El asistente brinda acompañamiento y orientación, pero no sustituye a un profesional de salud mental." |
+| **Episódica (LTM)** | **Conversación actual** | Información relevante proporcionada por el usuario durante una interacción específica. | "El usuario menciona sentirse preocupado por un examen." |
+| **Episódica (LTM)** | **Contexto personal** | Situaciones personales compartidas por el usuario que permiten comprender mejor su situación actual. | "El usuario expresa dificultades relacionadas con sus estudios." |
+| **Episódica (LTM)** | **Estado emocional expresado** | Emociones manifestadas por el usuario durante una conversación determinada. | "El usuario expresa sentirse triste y preocupado." |
+| **Episódica (LTM)** | **Temas recurrentes** | Temas que aparecen repetidamente en las interacciones, siempre que su almacenamiento esté autorizado. | "El usuario ha mencionado dificultades académicas en diferentes conversaciones." |
+| **Episódica (LTM)** | **Estrategias utilizadas** | Registra las estrategias de acompañamiento utilizadas y la respuesta del usuario. | "Se realizó un ejercicio de respiración y el usuario manifestó sentirse más tranquilo." |
+| **Episódica (LTM)** | **Evolución de la conversación** | Cambios relevantes en la información o emociones expresadas durante una interacción. | "El usuario pasó de expresar preocupación a indicar que se siente más tranquilo." |
