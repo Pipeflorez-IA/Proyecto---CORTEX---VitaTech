@@ -69,6 +69,7 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 | **Episódica (LTM)** | **Estrategias utilizadas** | Registra las estrategias de acompañamiento utilizadas y la respuesta del usuario. | "Se realizó un ejercicio de respiración y el usuario manifestó sentirse más tranquilo." |
 | **Episódica (LTM)** | **Evolución de la conversación** | Cambios relevantes en la información o emociones expresadas durante una interacción. | "El usuario pasó de expresar preocupación a indicar que se siente más tranquilo." |
 .
+
 ├── docs/
 │   ├── arquitectura_memoria.md
 │   └── regla_de_olvido.md
