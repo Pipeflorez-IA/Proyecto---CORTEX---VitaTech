@@ -68,3 +68,143 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 | **Episódica (LTM)** | **Temas recurrentes** | Temas que aparecen repetidamente en las interacciones, siempre que su almacenamiento esté autorizado. | "El usuario ha mencionado dificultades académicas en diferentes conversaciones." |
 | **Episódica (LTM)** | **Estrategias utilizadas** | Registra las estrategias de acompañamiento utilizadas y la respuesta del usuario. | "Se realizó un ejercicio de respiración y el usuario manifestó sentirse más tranquilo." |
 | **Episódica (LTM)** | **Evolución de la conversación** | Cambios relevantes en la información o emociones expresadas durante una interacción. | "El usuario pasó de expresar preocupación a indicar que se siente más tranquilo." |
+
+import time
+from typing import List, Dict, Any, Optional
+
+
+class CognitiveRAM:
+    """
+    Semana 8: La RAM Cognitiva (Memoria de Trabajo).
+    Mantiene un buffer deslizante de capacidad 7±2 mensajes y gestiona 
+    la regla de olvido por inactividad (10 minutos por defecto).
+    """
+    def __init__(self, capacity: int = 7, timeout_seconds: int = 600):
+        self.capacity = capacity
+        self.timeout_seconds = timeout_seconds
+        self.buffer: List[Dict[str, str]] = []
+        self.last_activity_time: float = time.time()
+
+    def _check_timeout(self) -> bool:
+        """Regla de Olvido: Purga la RAM si han transcurrido más de 10 minutos sin actividad."""
+        elapsed = time.time() - self.last_activity_time
+        if elapsed > self.timeout_seconds:
+            self.clear_ram()
+            return True
+        return False
+
+    def add_message(self, role: str, content: str) -> Optional[Dict[str, str]]:
+        """
+        Agrega un mensaje a la RAM. Si la capacidad rebasa el límite de 7±2,
+        expulsa el mensaje más antiguo (FIFO) para archivarlo en LTM.
+        """
+        self._check_timeout()
+        self.last_activity_time = time.time()
+
+        evicted_message = None
+        # Si sobrepasa la capacidad del buffer
+        if len(self.buffer) >= self.capacity:
+            evicted_message = self.buffer.pop(0)  # Regla de expulsión por ventana deslizante
+
+        self.buffer.append({"role": role, "content": content})
+        return evicted_message
+
+    def clear_ram(self) -> None:
+        """Limpia por completo el contexto activo en la RAM."""
+        self.buffer.clear()
+        self.last_activity_time = time.time()
+
+    def get_context(self) -> List[Dict[str, str]]:
+        """Retorna los mensajes en la RAM actualizando el registro de actividad."""
+        if self._check_timeout():
+            return []
+        self.last_activity_time = time.time()
+        return self.buffer
+
+
+class LTMBibliotecario:
+    """
+    Semana 9: El Bibliotecario (Procesos de Recuperación en LTM).
+    Persiste la información que sale de la RAM y realiza búsquedas semánticas.
+    """
+    def __init__(self):
+        self.ltm_database: List[Dict[str, Any]] = []
+
+    def store_memory(self, message: Dict[str, str], metadata: Optional[Dict] = None) -> None:
+        """Almacena recuerdos expulsados de la RAM en la Memoria a Largo Plazo."""
+        record = {
+            "role": message["role"],
+            "content": message["content"],
+            "timestamp": time.time(),
+            "metadata": metadata or {}
+        }
+        self.ltm_database.append(record)
+
+    def search_relevant_memories(self, query: str, top_k: int = 3) -> List[Dict[str, Any]]:
+        """
+        Flujo de recuperación: Busca en LTM las memorias más afines
+        a la pregunta del usuario.
+        """
+        query_words = set(query.lower().split())
+        results = []
+
+        for record in self.ltm_database:
+            content_words = set(record["content"].lower().split())
+            overlap = len(query_words.intersection(content_words))
+            if overlap > 0:
+                results.append((overlap, record))
+
+        # Ordenar por relevancia de coincidencias (Top-K)
+        results.sort(key=lambda x: x[0], reverse=True)
+        return [item[1] for item in results[:top_k]]
+
+
+class MemoryManager:
+    """
+    Orquestador principal: Conecta la RAM Cognitiva con el Bibliotecario LTM.
+    """
+    def __init__(self, ram_capacity: int = 7, timeout_seconds: int = 600):
+        self.ram = CognitiveRAM(capacity=ram_capacity, timeout_seconds=timeout_seconds)
+        self.ltm = LTMBibliotecario()
+
+    def process_incoming_message(self, user_query: str) -> Dict[str, Any]:
+        """
+        Procesa una nueva interacción de la Fase 2 a la Fase 3:
+        1. Recupera contexto relevante de LTM.
+        2. Inyecta el nuevo mensaje en RAM.
+        3. Persiste en LTM si la RAM sobrepasa la capacidad.
+        """
+        # Búsqueda de contexto histórico en LTM (El Bibliotecario)
+        retrieved_ltm = self.ltm.search_relevant_memories(user_query)
+
+        # Inserción en RAM y control de rebosamiento (Ventana 7±2)
+        evicted = self.ram.add_message(role="user", content=user_query)
+        if evicted:
+            self.ltm.store_memory(evicted)
+
+        return {
+            "active_ram": self.ram.get_context(),
+            "retrieved_ltm": retrieved_ltm
+        }
+
+
+# ==========================================
+# Ejemplo de Uso / Pruebas Unitarias Directas
+# ==========================================
+if __name__ == "__main__":
+    bot_memory = MemoryManager(ram_capacity=7, timeout_seconds=600)
+
+    # Llenado de memoria para probar la ventana deslizante (Semana 8)
+    for i in range(1, 10):
+        bot_memory.process_incoming_message(f"Mensaje número {i} de la conversación")
+
+    # Verificación de la RAM (debe mantener los últimos 7 mensajes)
+    print(f"Mensajes activos en RAM ({len(bot_memory.ram.get_context())}):")
+    for msg in bot_memory.ram.get_context():
+        print(f" - {msg['content']}")
+
+    # Verificación de la LTM (debe contener los mensajes 1 y 2 expulsados)
+    print(f"\nRecuerdos persistidos en LTM ({len(bot_memory.ltm.ltm_database)}):")
+    for mem in bot_memory.ltm.ltm_database:
+        print(f" - [LTM] {mem['content']}")
+        
