@@ -68,3 +68,14 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 | **Episódica (LTM)** | **Temas recurrentes** | Temas que aparecen repetidamente en las interacciones, siempre que su almacenamiento esté autorizado. | "El usuario ha mencionado dificultades académicas en diferentes conversaciones." |
 | **Episódica (LTM)** | **Estrategias utilizadas** | Registra las estrategias de acompañamiento utilizadas y la respuesta del usuario. | "Se realizó un ejercicio de respiración y el usuario manifestó sentirse más tranquilo." |
 | **Episódica (LTM)** | **Evolución de la conversación** | Cambios relevantes en la información o emociones expresadas durante una interacción. | "El usuario pasó de expresar preocupación a indicar que se siente más tranquilo." |
+.
+├── docs/
+│   ├── arquitectura_memoria.md
+│   └── regla_de_olvido.md
+├── src/
+│   ├── memory/
+│   │   ├── context_window.py   # Implementación del buffer 7±2 (RAM)
+│   │   └── ltm_retriever.py    # Lógica de búsqueda en Memoria a Largo Plazo
+│   └── utils/
+│       └── session_timeout.py  # Temporizador de 10 min para la regla de olvido
+└── README.md
