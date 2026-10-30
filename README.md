@@ -70,9 +70,3 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 | **Episódica (LTM)** | **Evolución de la conversación** | Cambios relevantes en la información o emociones expresadas durante una interacción. | "El usuario pasó de expresar preocupación a indicar que se siente más tranquilo." |
 
 <img width="866" height="689" alt="image" src="https://github.com/user-attachments/assets/4b2c22c5-218c-4ba5-9258-2155d05f5f4c" />
-
-
-    print(f"\nRecuerdos persistidos en LTM ({len(bot_memory.ltm.ltm_database)}):")
-    for mem in bot_memory.ltm.ltm_database:
-        print(f" - [LTM] {mem['content']}")
-        
