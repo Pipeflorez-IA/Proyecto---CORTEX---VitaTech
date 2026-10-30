@@ -81,6 +81,7 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 | **Uso de Emojis** | Permitido, máximo 1 por mensaje para transmitir calidez y reforzar hábitos saludables. | "¡No olvides mantenerte hidratado durante tu jornada! 💧" |
 | **Jerga Técnica** | Prohibida. Traducir conceptos de salud, nutrición o métricas a analogías sencillas. | "Imagina tu meta de sueño como recargar la batería de tu cuerpo al 100% cada noche." |
 | **Longitud** | Explicativa, estructurada y eficiente. Se permiten de 2 a 3 párrafos breves (o listas de puntos) para aclarar conceptos y educar al usuario sin abrumarlo con texto denso. | (Definiciones claras y concisas acompañadas de una recomendación o paso práctico a seguir) |
+<img width="1839" height="486" alt="image" src="https://github.com/user-attachments/assets/eb819524-c0ed-4d0c-a067-45020399c0f8" />
 
 # VITATECH – Semana 12: El Guion Maestro
 
