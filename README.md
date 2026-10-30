@@ -70,3 +70,5 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 | **Episódica (LTM)** | **Evolución de la conversación** | Cambios relevantes en la información o emociones expresadas durante una interacción. | "El usuario pasó de expresar preocupación a indicar que se siente más tranquilo." |
 
 <img width="866" height="689" alt="image" src="https://github.com/user-attachments/assets/4b2c22c5-218c-4ba5-9258-2155d05f5f4c" />
+<img width="1812" height="268" alt="image" src="https://github.com/user-attachments/assets/44d77742-f139-4515-af70-0f40eab19288" />
+
