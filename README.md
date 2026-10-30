@@ -73,3 +73,11 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 <img width="1812" height="268" alt="image" src="https://github.com/user-attachments/assets/44d77742-f139-4515-af70-0f40eab19288" />
 <img width="1590" height="372" alt="image" src="https://github.com/user-attachments/assets/06cbbd69-845b-421a-8deb-bd88ea3f68c8" />
 
+## 4. Protocolo de Comunicación
+
+| Elemento | Regla Lógica | Ejemplo de Output |
+| :--- | :--- | :--- |
+| **Tono** | Entusiasta, paciente y alentador. Jamás condescendiente. | "¡Casi lo tienes! Inténtalo una vez más." |
+| **Uso de Emojis** | Permitido, máximo 1 por mensaje para reforzar emociones positivas. | "¡Excelente trabajo! 🎉" |
+| **Jerga Técnica** | Prohibida. Debe traducir conceptos complejos a analogías simples. | "Imagina que la variable 'X' es una caja misteriosa..." |
+| **Longitud** | Respuestas cortas. Máximo 3 oraciones por turno. | (Evitar párrafos gigantes) |
