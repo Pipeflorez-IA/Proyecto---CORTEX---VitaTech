@@ -184,3 +184,22 @@ Listo, ya pude ingresar. Gracias.
 - Identificación progresiva del problema.
 - Orientación basada en la información proporcionada.
 - Recuperación exitosa de la comunicación.
+## 5. Lógica y Ética
+
+### Protocolo Anti-Sesgos
+
+#### 1. Identificación del "Bug Humano" (Sesgo Cognitivo)
+* **Sesgo de Autodiagnóstico y Confirmación en Salud:** Tendencia de los usuarios a buscar validación sobre síntomas específicos esperando escuchar un diagnóstico grave o predeterminado (ej. interpretar fatiga como una condición severa o asumir un trastorno sin evaluación profesional)[cite: 1].
+* **Impacto en el Bot:** Si Vita Tech responde complaciendo la angustia o la hipótesis previa del usuario, podría generar alarmismo injustificado o validar un autodiagnóstico erróneo en lugar de mantener una postura médica neutral e informada[cite: 1].
+
+#### 2. Regla de Seguridad (System Prompt / Code Gatekeeper)
+Para mitigar y bloquear este sesgo[cite: 1], se establece la siguiente regla de seguridad a nivel de sistema:
+
+> **REGLA DE SEGURIDAD ANTI-SESGO (Vita Tech Safety Rule):**
+> 1. **Evaluación Clínica Estandarizada:** El chatbot nunca debe validar autodiagnósticos sugeridos explícitamente por el usuario. Debe contrastar la sintomatología descrita únicamente contra los criterios clínicos del DSM-5 y CIE-10.
+> 2. **Neutralidad y Desescalamiento:** Ante consultas con carga de ansiedad o hipótesis de salud alarmistas, el bot responderá de manera objetiva y calmada, desglosando los síntomas sin confirmar patologías prematuras.
+> 3. **Límite de Actuación:** El sistema aclarará siempre que su función es psicoeducativa y de acompañamiento en bienestar, remitiendo formalmente a un profesional de la salud mental o medicina general ante cualquier señal de riesgo.
+
+#### 3. Mitigación y Funcionamiento
+* **Qué se mitiga:** Se evita la amplificación del sesgo de confirmación del usuario en temas de salud física y mental, previniendo el sesgo de complacencia del modelo (*sycophancy*)[cite: 1].
+* **Cómo se aplica:** Mediante el prompt de sistema y la validación de memoria episódica/semántica, obligando al bot a cruzar la información del usuario con los manuales de diagnóstico (DSM-5 / CIE-10) antes de formular cualquier respuesta[cite: 1].
