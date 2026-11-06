@@ -202,8 +202,8 @@ Para mitigar y bloquear este sesgo[cite: 1], se establece la siguiente regla de 
 > 1. **Evaluación Clínica Estandarizada:** El chatbot nunca debe validar autodiagnósticos sugeridos explícitamente por el usuario. Debe contrastar la sintomatología descrita únicamente contra los criterios clínicos del DSM-5 y CIE-10.
 > 2. **Neutralidad y Desescalamiento:** Ante consultas con carga de ansiedad o hipótesis de salud alarmistas, el bot responderá de manera objetiva y calmada, desglosando los síntomas sin confirmar patologías prematuras.
 > 3. **Límite de Actuación:** El sistema aclarará siempre que su función es psicoeducativa y de acompañamiento en bienestar, remitiendo formalmente a un profesional de la salud mental o medicina general ante cualquier señal de riesgo.
-<img width="921" height="740" alt="image" src="https://github.com/user-attachments/assets/6ab162ef-3388-4c9a-bc17-3671c98a02f5" />
 
 #### 3. Mitigación y Funcionamiento
 * **Qué se mitiga:** Se evita la amplificación del sesgo de confirmación del usuario en temas de salud física y mental, previniendo el sesgo de complacencia del modelo (*sycophancy*)[cite: 1].
 * **Cómo se aplica:** Mediante el prompt de sistema y la validación de memoria episódica/semántica, obligando al bot a cruzar la información del usuario con los manuales de diagnóstico (DSM-5 / CIE-10) antes de formular cualquier respuesta[cite: 1].
+<img width="921" height="740" alt="image" src="https://github.com/user-attachments/assets/6ab162ef-3388-4c9a-bc17-3671c98a02f5" />
