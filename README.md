@@ -203,3 +203,4 @@ Para mitigar y bloquear este sesgo[cite: 1], se establece la siguiente regla de 
 #### 3. Mitigación y Funcionamiento
 * **Qué se mitiga:** Se evita la amplificación del sesgo de confirmación del usuario en temas de salud física y mental, previniendo el sesgo de complacencia del modelo (*sycophancy*)[cite: 1].
 * **Cómo se aplica:** Mediante el prompt de sistema y la validación de memoria episódica/semántica, obligando al bot a cruzar la información del usuario con los manuales de diagnóstico (DSM-5 / CIE-10) antes de formular cualquier respuesta[cite: 1].
+<img width="1536" height="1024" alt="Árbol de Decisión VITATECH" src="https://github.com/user-attachments/assets/a6819211-6b8e-43d9-b750-cb8c7e25bf34" />
