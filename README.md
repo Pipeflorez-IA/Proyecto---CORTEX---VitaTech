@@ -207,3 +207,43 @@ Para mitigar y bloquear este sesgo[cite: 1], se establece la siguiente regla de 
 * **Qué se mitiga:** Se evita la amplificación del sesgo de confirmación del usuario en temas de salud física y mental, previniendo el sesgo de complacencia del modelo (*sycophancy*)[cite: 1].
 * **Cómo se aplica:** Mediante el prompt de sistema y la validación de memoria episódica/semántica, obligando al bot a cruzar la información del usuario con los manuales de diagnóstico (DSM-5 / CIE-10) antes de formular cualquier respuesta[cite: 1].
 <img width="921" height="740" alt="image" src="https://github.com/user-attachments/assets/6ab162ef-3388-4c9a-bc17-3671c98a02f5" />
+## 6. Motivación y Control
+
+### 6.1. Meta Principal y Función Objetivo
+La motivación del agente consiste en maximizar la utilidad y precisión de cada interacción, logrando resolver la consulta o necesidad del usuario de manera efectiva sin generar fricción innecesaria.
+
+Matemáticamente, el comportamiento del agente se rige por la siguiente función objetivo ($J$), la cual busca maximizar la recompensa esperada acumulada a lo largo de la sesión:
+
+$$J(\pi) = \mathbb{E} \left[ \sum_{t=0}^{T} \gamma^t \left( w_1 \cdot S(s_t, a_t) - w_2 \cdot C(s_t, a_t) - w_3 \cdot E(s_t, a_t) \right) \right]$$
+
+Donde:
+* **$S(s_t, a_t)$ (Satisfacción y Precisión):** Recompensa positiva otorgada cuando la respuesta del agente es relevante, precisa y resuelve la intención del usuario.
+* **$C(s_t, a_t)$ (Costo de Interacción / Tiempo):** Penalización proporcional al número de turnos o tiempo requerido para llegar a la solución.
+* **$E(s_t, a_t)$ (Tasa de Error / Alucinación):** Penalización severa si el agente entrega información incorrecta, incoherente o fuera de contexto.
+* **$w_1, w_2, w_3$:** Pesos de ponderación que ajustan la prioridad de cada factor según el caso de uso.
+* **$\gamma \in [0, 1]$:** Factor de descuento que equilibra las recompensas inmediatas frente al éxito global de la conversación.
+
+---
+
+### 6.2. Métricas de Éxito (KPIs)
+Para evaluar si el agente está cumpliendo su función objetivo en producción, se monitorean los siguientes indicadores:
+
+| Métrica | Descripción | Meta / Umbral Esperado |
+| :--- | :--- | :--- |
+| **Tasa de Resolución (FCR)** | Porcentaje de conversaciones donde el usuario obtiene una respuesta útil sin requerir intervención humana o reformular múltiples veces. | $\ge 85\%$ |
+| **Satisfacción del Usuario (CSAT)** | Calificación directa (ej. 👍/👎 o escala 1-5) otorgada al finalizar la interacción. | $\ge 4.2 / 5.0$ |
+| **Turnos Promedio por Sesión** | Cantidad media de mensajes necesarios para completar la tarea solicitada. | $2 - 4 \text{ turnos}$ |
+| **Tasa de Escalamiento / Abandono** | Porcentaje de usuarios que abandonan el chat abruptamente o solicitan soporte externo. | $\le 10\%$ |
+
+---
+
+### 6.3. Conflicto de Motivaciones (Trade-offs) y Control
+En la operación del agente surgen tensiones naturales entre sus objetivos:
+
+1. **Velocidad vs. Profundidad (Tiempo de charla vs. Satisfacción):**
+   * *El conflicto:* Minimizar estrictamente el tiempo de charla ($C$) puede llevar al bot a dar respuestas demasiado cortas, genéricas o incompletas, reduciendo la satisfacción ($S$). Por el contrario, maximizar la exhaustividad puede alargar la conversación y fatigar al usuario.
+   * *Mecanismo de control:* Se prioriza el peso de la precisión ($w_1 > w_2$) en consultas complejas, pero se establecen límites de longitud por respuesta y opciones de respuesta rápida para mantener la agilidad.
+
+2. **Creatividad vs. Rigor (Fluidez vs. Tasa de Error):**
+   * *El conflicto:* Intentar responder siempre para agradar al usuario aumenta el riesgo de alucinaciones o respuestas inventadas ($E$).
+   * *Mecanismo de control:* Implementación de umbrales de confianza (*confidence thresholds*). Si la certeza de la respuesta cae por debajo de un límite establecido, el agente activa una política de abstención controlada (admite que no tiene el dato o pide aclaración) en lugar de especular.
