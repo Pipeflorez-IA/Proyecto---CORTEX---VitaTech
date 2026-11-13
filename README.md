@@ -252,3 +252,4 @@ En un asistente enfocado en salud y bienestar psicológico, las motivaciones ent
 3. **Persistencia de Memoria vs. Privacidad y Relevancia:**
    * *El conflicto:* Recordar todo el historial episódico demuestra continuidad, pero traer a colación traumas o eventos pasados sin contexto genera incomodidad y rompe la confianza.
    * *Mecanismo de control:* **Filtrado por relevancia contextual.** La memoria episódica solo se inyecta en el contexto activo cuando supera un umbral de similitud semántica con el estado emocional actual del usuario o cuando este hace referencia explícita a su historial.
+<img width="1830" height="746" alt="image" src="https://github.com/user-attachments/assets/ae87bf5a-47eb-40d2-a761-221dd8bcb1d5" />
