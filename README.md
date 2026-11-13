@@ -210,40 +210,45 @@ Para mitigar y bloquear este sesgo[cite: 1], se establece la siguiente regla de 
 ## 6. Motivación y Control
 
 ### 6.1. Meta Principal y Función Objetivo
-La motivación del agente consiste en maximizar la utilidad y precisión de cada interacción, logrando resolver la consulta o necesidad del usuario de manera efectiva sin generar fricción innecesaria.
+La motivación principal de **Vita Tech** es brindar acompañamiento conversacional empático, estructurado y clínicamente fundamentado (basado en los criterios del **DSM-5** y la **CIE-10**), manteniendo coherencia longitudinal mediante su arquitectura de memoria semántica y episódica, sin incurrir en diagnósticos médicos ni poner en riesgo la integridad del usuario[cite: 1].
 
-Matemáticamente, el comportamiento del agente se rige por la siguiente función objetivo ($J$), la cual busca maximizar la recompensa esperada acumulada a lo largo de la sesión:
+Matemáticamente, la política de acción ($\pi$) del agente busca maximizar la recompensa esperada acumulada a lo largo de las interacciones:
 
-$$J(\pi) = \mathbb{E} \left[ \sum_{t=0}^{T} \gamma^t \left( w_1 \cdot S(s_t, a_t) - w_2 \cdot C(s_t, a_t) - w_3 \cdot E(s_t, a_t) \right) \right]$$
+$$J(\pi) = \mathbb{E} \left[ \sum_{t=0}^{T} \gamma^t \left( w_1 \cdot A(s_t, a_t) + w_2 \cdot M(s_t, a_t) - w_3 \cdot F(s_t, a_t) - w_4 \cdot R(s_t, a_t) \right) \right]$$
 
 Donde:
-* **$S(s_t, a_t)$ (Satisfacción y Precisión):** Recompensa positiva otorgada cuando la respuesta del agente es relevante, precisa y resuelve la intención del usuario.
-* **$C(s_t, a_t)$ (Costo de Interacción / Tiempo):** Penalización proporcional al número de turnos o tiempo requerido para llegar a la solución.
-* **$E(s_t, a_t)$ (Tasa de Error / Alucinación):** Penalización severa si el agente entrega información incorrecta, incoherente o fuera de contexto.
-* **$w_1, w_2, w_3$:** Pesos de ponderación que ajustan la prioridad de cada factor según el caso de uso.
-* **$\gamma \in [0, 1]$:** Factor de descuento que equilibra las recompensas inmediatas frente al éxito global de la conversación.
+* **$A(s_t, a_t)$ (Alineación Clínica y Empática):** Recompensa positiva cuando la respuesta valida emocionalmente al usuario y estructura la exploración de síntomas o bienestar conforme a las guías del DSM-5 / CIE-10 sin emitir diagnósticos definitivos.
+* **$M(s_t, a_t)$ (Coherencia de Memoria):** Recompensa por recuperar y aplicar con precisión el contexto relevante de la memoria episódica (eventos pasados del usuario) y semántica (conocimiento clínico y preferencias).
+* **$F(s_t, a_t)$ (Fricción Cognitiva / Fatiga):** Penalización proporcional a respuestas excesivamente largas, interrogatorios abrumadores o redundancia en las preguntas.
+* **$R(s_t, a_t)$ (Riesgo Clínico o Alucinación):** Penalización crítica ($w_4 \gg w_1, w_2, w_3$) ante cualquier desviación de seguridad: emitir un diagnóstico clínico cerrado, sugerir medicación, alucinar criterios diagnósticos o ignorar señales de crisis/autolesión.
+* **$\gamma \in [0, 1]$:** Factor de descuento que prioriza la estabilidad y seguridad del usuario a largo plazo sobre la gratificación conversacional inmediata.
 
 ---
 
 ### 6.2. Métricas de Éxito (KPIs)
-Para evaluar si el agente está cumpliendo su función objetivo en producción, se monitorean los siguientes indicadores:
+El desempeño del motor de motivación de Vita Tech se evalúa mediante los siguientes indicadores[cite: 1]:
 
 | Métrica | Descripción | Meta / Umbral Esperado |
 | :--- | :--- | :--- |
-| **Tasa de Resolución (FCR)** | Porcentaje de conversaciones donde el usuario obtiene una respuesta útil sin requerir intervención humana o reformular múltiples veces. | $\ge 85\%$ |
-| **Satisfacción del Usuario (CSAT)** | Calificación directa (ej. 👍/👎 o escala 1-5) otorgada al finalizar la interacción. | $\ge 4.2 / 5.0$ |
-| **Turnos Promedio por Sesión** | Cantidad media de mensajes necesarios para completar la tarea solicitada. | $2 - 4 \text{ turnos}$ |
-| **Tasa de Escalamiento / Abandono** | Porcentaje de usuarios que abandonan el chat abruptamente o solicitan soporte externo. | $\le 10\%$ |
+| **Fidelidad Taxonómica (DSM-5 / CIE-10)** | Porcentaje de orientaciones y estructuración de síntomas que respetan estrictamente los criterios de referencia sin alucinaciones clínicas. | $\ge 98\%$ |
+| **Precisión de Recuperación de Memoria** | Tasa de acierto al evocar recuerdos episódicos previos del usuario de forma pertinente y no intrusiva en la conversación. | $\ge 90\%$ |
+| **Índice de Seguridad y Contención** | Cumplimiento de protocolos de derivación y líneas de ayuda ante detección de crisis emocional o riesgo vital. | $100\%$ |
+| **Bienestar Percibido y Empatía (CSAT)** | Valoración del usuario sobre la calidez, claridad y utilidad del acompañamiento tras la sesión. | $\ge 4.5 / 5.0$ |
+| **Tasa de Fatiga / Abandono Temprano** | Porcentaje de sesiones abandonadas a mitad de una exploración guiada por exceso de preguntas o respuestas muy densas. | $\le 12\%$ |
 
 ---
 
-### 6.3. Conflicto de Motivaciones (Trade-offs) y Control
-En la operación del agente surgen tensiones naturales entre sus objetivos:
+### 6.3. Conflicto de Motivaciones (Trade-offs) y Mecanismos de Control
+En un asistente enfocado en salud y bienestar psicológico, las motivaciones entran en conflicto directo y requieren reglas estrictas de control[cite: 1]:
 
-1. **Velocidad vs. Profundidad (Tiempo de charla vs. Satisfacción):**
-   * *El conflicto:* Minimizar estrictamente el tiempo de charla ($C$) puede llevar al bot a dar respuestas demasiado cortas, genéricas o incompletas, reduciendo la satisfacción ($S$). Por el contrario, maximizar la exhaustividad puede alargar la conversación y fatigar al usuario.
-   * *Mecanismo de control:* Se prioriza el peso de la precisión ($w_1 > w_2$) en consultas complejas, pero se establecen límites de longitud por respuesta y opciones de respuesta rápida para mantener la agilidad.
+1. **Exhaustividad Clínica vs. Fatiga del Usuario (Tiempo de charla vs. Satisfacción):**
+   * *El conflicto:* Para mapear adecuadamente indicadores bajo estándares DSM-5 o CIE-10, el bot tiende a hacer múltiples preguntas de seguimiento; sin embargo, un usuario angustiado o cansado puede sentir la charla como un formulario frío y abandonar la sesión[cite: 1].
+   * *Mecanismo de control:* **Dosificación conversacional.** El agente limita su exploración a un máximo de 1 pregunta abierta o estructurada por turno, priorizando la validación emocional antes de recolectar nuevos datos para su memoria episódica.
 
-2. **Creatividad vs. Rigor (Fluidez vs. Tasa de Error):**
-   * *El conflicto:* Intentar responder siempre para agradar al usuario aumenta el riesgo de alucinaciones o respuestas inventadas ($E$).
-   * *Mecanismo de control:* Implementación de umbrales de confianza (*confidence thresholds*). Si la certeza de la respuesta cae por debajo de un límite establecido, el agente activa una política de abstención controlada (admite que no tiene el dato o pide aclaración) en lugar de especular.
+2. **Empatía / Complacencia vs. Límites Clínicos (Rigor):**
+   * *El conflicto:* Maximizar la satisfacción inmediata del usuario ($A$) puede llevar al modelo a darle la razón en interpretaciones erróneas o confirmar autodiagnósticos (*"¿Entonces tengo trastorno X?"*).
+   * *Mecanismo de control:* **Restricción dura (*Hard Constraint*) de no-diagnóstico.** El peso de penalización por riesgo ($w_4$) anula cualquier recompensa de empatía si la respuesta implica etiquetar clínicamente al usuario. El bot redirige la conversación hacia el registro de síntomas y la consulta con un profesional de la salud.
+
+3. **Persistencia de Memoria vs. Privacidad y Relevancia:**
+   * *El conflicto:* Recordar todo el historial episódico demuestra continuidad, pero traer a colación traumas o eventos pasados sin contexto genera incomodidad y rompe la confianza.
+   * *Mecanismo de control:* **Filtrado por relevancia contextual.** La memoria episódica solo se inyecta en el contexto activo cuando supera un umbral de similitud semántica con el estado emocional actual del usuario o cuando este hace referencia explícita a su historial.
