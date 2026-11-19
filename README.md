@@ -220,6 +220,8 @@ Para mitigar y bloquear este sesgo[cite: 1], se establece la siguiente regla de 
 <img width="921" height="740" alt="image" src="https://github.com/user-attachments/assets/6ab162ef-3388-4c9a-bc17-3671c98a02f5" />
 ## 6. Motivación y Control
 
+FASE 6
+
 ### 6.1. Meta Principal y Función Objetivo
 La motivación principal de **Vita Tech** es brindar acompañamiento conversacional empático, estructurado y clínicamente fundamentado (basado en los criterios del **DSM-5** y la **CIE-10**), manteniendo coherencia longitudinal mediante su arquitectura de memoria semántica y episódica, sin incurrir en diagnósticos médicos ni poner en riesgo la integridad del usuario[cite: 1].
 
