@@ -79,6 +79,8 @@ La memoria del asistente se divide en **Memoria Semántica** y **Memoria Episód
 <img width="1812" height="268" alt="image" src="https://github.com/user-attachments/assets/44d77742-f139-4515-af70-0f40eab19288" />
 <img width="1590" height="372" alt="image" src="https://github.com/user-attachments/assets/06cbbd69-845b-421a-8deb-bd88ea3f68c8" />
 
+FASE 4
+
 ## 4. Protocolo de Comunicación
 
 | Elemento | Regla Lógica | Ejemplo de Output |
