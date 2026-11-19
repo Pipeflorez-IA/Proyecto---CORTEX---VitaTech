@@ -192,6 +192,9 @@ Listo, ya pude ingresar. Gracias.
 - Identificación progresiva del problema.
 - Orientación basada en la información proporcionada.
 - Recuperación exitosa de la comunicación.
+
+  FASE 5
+  
   # Mapeo del Arblo De Decisiones -- VitaTech
 - <img width="1536" height="1024" alt="Árbol de Decisión VITATECH" src="https://github.com/user-attachments/assets/ef2615ad-781d-4bc9-b9e1-f84c18e91eb5" />
 
