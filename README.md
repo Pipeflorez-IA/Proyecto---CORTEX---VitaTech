@@ -49,7 +49,7 @@ FIN SI
 * **Memoria Semántica:** Garantiza que el bot posea un conocimiento del mundo real y del dominio específico (fórmulas, catálogo, procedimientos) que nunca caduca.
 * **Memoria Episódica:** Aporta la capacidad de recordar contextos previos, casos particulares y el histórico del usuario para ofrecer respuestas personalizadas y continuas.
 
-* FASE 3
+FASE 3
   
 # Diseño de la Memoria del Agente
 
